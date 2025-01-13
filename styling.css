@@ -1,0 +1,15 @@
+.shelf {
+    display: grid;
+    background-image: url(./images/empty-display-shelf-svgrepo-com.svg);
+    background-size: 90vh 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 90vh;
+    min-width: 100vh;
+}
+
+.shelfArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
