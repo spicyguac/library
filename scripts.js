@@ -1,8 +1,8 @@
 const shelf = document.querySelector(".shelf");
 const form = document.getElementById("bookFrom");
 const dialog = document.querySelector("dialog");
-const showButton = document.querySelector(".addBook")
-
+const showButton = document.querySelector(".addBook");
+const removeBook = document.querySelector(".removeBook");
 
 document.addEventListener("DOMContentLoaded", function() {
     addBookToLibrary();
@@ -13,6 +13,9 @@ showButton.addEventListener("click", () => {
     dialog.showModal();
 })
 
+// removeBook.addEventListener("click", () =>{
+
+// })
 
 const myLibrary = []
 
@@ -48,6 +51,7 @@ function addBookToLibrary() {
 function displayBook(addBook) {
         let bookOnShelf = document.createElement("div");
         bookOnShelf.classList.add("bookAdded");
+        bookOnShelf.id = myLibrary.length;
         
         let bookHeight = 150/9;
         let bookWidth = 100/9;
