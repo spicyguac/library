@@ -6,7 +6,7 @@ const showButton = document.querySelector(".addBook")
 
 document.addEventListener("DOMContentLoaded", function() {
     addBookToLibrary();
-
+    
 })
 
 showButton.addEventListener("click", () => {
@@ -39,11 +39,35 @@ function addBookToLibrary() {
         form.reset();
 
         dialog.close();
+
+        displayBook(addbook);
     });
 }
 
-function displayLibary() {
-    myLibrary.forEach(function(book){
+//Create book element to display on shelf
+function displayBook(addBook) {
+        let bookOnShelf = document.createElement("div");
+        bookOnShelf.classList.add("bookAdded");
         
-    });
+        let bookHeight = 150/9;
+        let bookWidth = 100/9;
+        
+        bookOnShelf.style.height = `${bookHeight}vh`;
+        bookOnShelf.style.width = `${bookWidth}vh`;
+        
+        shelf.appendChild(bookOnShelf);
+        console.log(addBook);
+
+        let newBook = document.querySelector(".bookAdded")
+
+        let title = document.createElement("p")
+        title.textContent = addBook.bookTitle
+
+        newBook.appendChild(title);
+
+        let remove = document.createElement("button");
+        remove.classList.add("removeBook");
+        remove.textContent = "Remove";
+
+        newBook.appendChild(remove);
 }
