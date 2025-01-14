@@ -60,17 +60,34 @@ function displayBook(addBook) {
         bookOnShelf.style.height = `${bookHeight}vh`;
         bookOnShelf.style.width = `${bookWidth}vh`;
         
+        if(addBook.read_status == 'yes'){
+            bookOnShelf.style.border = '4px solid #16a34a';
+        }else{
+            bookOnShelf.style.border = '4px solid #dc2626';
+        }
+
         shelf.appendChild(bookOnShelf);
-        //console.log(addBook);
+        console.log(addBook);
 
         let newBook = document.getElementById(id);
         
         let finished = document.createElement("button");
         finished.classList.add("readStatus");
-        finished.id = id;
-        finished.textContent = "Finished"
+        finished.id = "F" + id;
+        finished.textContent = "Finished";
 
         newBook.appendChild(finished);
+
+        const adjustStatusButton = document.getElementById(id);
+            adjustStatusButton.addEventListener("click", (event) => {
+            if(addBook.read_status == 'yes'){
+                adjustStatusButton.style.border = '4px solid #dc2626';
+                addBook.read_status = 'no'
+            }else{
+                adjustStatusButton.style.border = '4px solid #16a34a';
+                addBook.read_status = 'yes'
+            }
+        });
 
         let title = document.createElement("p")
         title.textContent = addBook.bookTitle;
@@ -79,17 +96,19 @@ function displayBook(addBook) {
 
         let removeButton = document.createElement("button");
         removeButton.classList.add("removeBook");
-        removeButton.id = id;
+        removeButton.id = "R" + id;
         removeButton.textContent = "Remove";
 
         newBook.appendChild(removeButton);
 
-        const removeBook = document.getElementById(id);
+        const removeBook = document.getElementById("R" + id);
         removeBook.addEventListener("click", (event) => {
             console.log(event.target.id);
-            const removeElements = document.getElementById(event.target.id)
+            let idToRemove = event.target.id;
+            idToRemove = idToRemove.slice(1);
+            const removeElements = document.getElementById(idToRemove);
             removeElements.remove();
-        })
+        });
 }
 
 function removeBooks (){
