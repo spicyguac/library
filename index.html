@@ -31,10 +31,16 @@
                     </label>
                     <input type="number" id="numOfPages" name="numOfPages">
 
-                    <label for="readTheBook">
-                        <span>Have You Read The Book</span>
-                    </label>
-                    <input type="text" id="readTheBook" name="readTheBook">
+                    <div>Have You Finished Reading The Book</div>
+                    <div>
+                        <input type="radio" id="yes" name="read_status" value="yes">
+                        <label for="yes">Yes</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="no" name="read_status" value="no">
+                        <label for="no">No</label>
+                    </div>
+                   
 
                     <button type="submit">Add Book</button>
                 </form>
