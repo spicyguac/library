@@ -64,14 +64,18 @@ function displayBook(addBook) {
         //console.log(addBook);
 
         let newBook = document.getElementById(id);
+        
+        let finished = document.createElement("button");
+        finished.classList.add("readStatus");
+        finished.id = id;
+        finished.textContent = "Finished"
+
+        newBook.appendChild(finished);
 
         let title = document.createElement("p")
         title.textContent = addBook.bookTitle;
 
         newBook.appendChild(title);
-
-        let finished = document.createElement("button");
-        
 
         let removeButton = document.createElement("button");
         removeButton.classList.add("removeBook");
