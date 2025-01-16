@@ -54,11 +54,8 @@ function displayBook(addBook) {
         bookOnShelf.id = addBook.bookTitle;
         let id = addBook.bookTitle;
         
-        let bookHeight = 150/9;
-        let bookWidth = 100/9;
-        
-        bookOnShelf.style.height = `${bookHeight}vh`;
-        bookOnShelf.style.width = `${bookWidth}vh`;
+        bookOnShelf.style.height = '10vh';
+        bookOnShelf.style.width = '10vh';
         
         if(addBook.read_status == 'yes'){
             bookOnShelf.style.border = '4px solid #16a34a';

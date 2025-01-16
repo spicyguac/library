@@ -1,11 +1,11 @@
 .shelf {
     display: grid;
-    grid-template-columns: repeat(3, 10vh);
-    grid-template-rows: repeat(3, 17vh);
-    row-gap: 9vh;
-    column-gap: 15vh;
-    padding-top: 15vh;
-    background-image: url(./images/empty-display-shelf-svgrepo-com.svg);
+    grid-template-columns: repeat(4, 8vh);
+    grid-template-rows: repeat(5, 10vh);
+    row-gap: 6.5vh;
+    column-gap: 6.5vh;
+    padding-top: 11vh;
+    background-image: url(./images/Bookshelves-Empty.svg);
     background-size: 90vh 100vh;
     background-repeat: no-repeat;
     background-position: center center;
@@ -24,4 +24,13 @@
 
 .bookAdded {
     background-color: brown;
+}
+
+button {
+    font-size: .5rem;
+}
+
+p{
+    padding: 0;
+    margin: 0;
 }
