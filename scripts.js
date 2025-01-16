@@ -86,10 +86,17 @@ function displayBook(addBook) {
             }
         });
 
-        let title = document.createElement("p")
+        let title = document.createElement("button");
+        title.classList.add("moreDetail");
+        title.id = "D" + id;
         title.textContent = addBook.bookTitle;
 
         newBook.appendChild(title);
+
+        const titleButton = document.getElementById("D" + id);
+        titleButton.addEventListener("click", (event) => {
+            
+        })
 
         let removeButton = document.createElement("button");
         removeButton.classList.add("removeBook");
@@ -106,6 +113,10 @@ function displayBook(addBook) {
             const removeElements = document.getElementById(idToRemove);
             removeElements.remove();
         });
+}
+
+function detailedLook(addBook){
+
 }
 
 function removeBooks (){
